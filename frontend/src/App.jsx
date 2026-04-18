@@ -202,7 +202,7 @@ function AuthScreen({ onLogin }) {
         <div style={{ textAlign: 'center', marginBottom: '32px' }}>
           <div style={{ fontSize: '48px', marginBottom: '8px' }}>⏱</div>
           <h1 style={{ fontSize: '24px', fontWeight: '700', color: '#042C53', margin: '0 0 6px' }}>
-            Punctuality App
+            OnTimeX
           </h1>
           <p style={{ color: '#888780', fontSize: '14px', margin: 0 }}>
             AI-powered delay management
@@ -1059,7 +1059,7 @@ export default function App() {
 
       {/* TOP NAVBAR */}
       <nav style={s.navbar}>
-        <span style={s.navTitle}>⏱ Punctuality App</span>
+        <span style={s.navTitle}>⏱ OnTimeX App</span>
         <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
           <span style={s.navScore}>
             {user.full_name} {isManager ? '👔 Manager' : ''}
