@@ -98,5 +98,15 @@ router.post('/login', async (req, res) => {
   res.status(500).json({ error: err.message });
 }
 });
+// ─── GET USER PROFILE ──────────────────────────────────────
+// Returns the logged-in user's info
+// Used by the frontend to know if this user is a manager
+const { authenticateToken } = require('../middleware/auth')
 
+router.get('/me', authenticateToken, (req, res) => {
+  const user = db.prepare('SELECT id, email, full_name, role FROM users WHERE id = ?')
+    .get(req.user.userId)
+  if (!user) return res.status(404).json({ error: 'User not found' })
+  res.json(user)
+})
 module.exports = router;
