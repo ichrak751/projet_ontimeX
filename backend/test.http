@@ -1,0 +1,49 @@
+### Register a new user
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "mypassword123",
+  "full_name": "Test User"
+}
+
+###
+
+### Login
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "mypassword123"
+}
+### Get all my trips (should return empty array for now)
+GET http://localhost:3000/api/trips
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoidGVzdEBleGFtcGxlLmNvbSIsImlhdCI6MTc3NjUxMzExOSwiZXhwIjoxNzc3MTE3OTE5fQ.JA0SyXK8WVCXbFeMMjA_SW80GappFCSq-5aqUaOWaG4
+
+###
+
+### Start a trip
+POST http://localhost:3000/api/trips/start
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoidGVzdEBleGFtcGxlLmNvbSIsImlhdCI6MTc3NjUxMzExOSwiZXhwIjoxNzc3MTE3OTE5fQ.JA0SyXK8WVCXbFeMMjA_SW80GappFCSq-5aqUaOWaG4
+
+{
+  "origin_lat": 36.8065,
+  "origin_lng": 10.1815,
+  "dest_lat": 36.8190,
+  "dest_lng": 10.1657,
+  "planned_arrival": "2026-04-18T12:00:00Z"
+}
+### Test AI prediction
+POST http://localhost:8000/predict
+Content-Type: application/json
+
+{
+  "origin_lat": 36.8065,
+  "origin_lng": 10.1815,
+  "dest_lat": 36.8190,
+  "dest_lng": 10.1657,
+  "departure_time": "2026-04-17T08:00:00Z"
+}
